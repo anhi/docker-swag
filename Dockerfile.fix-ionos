@@ -1,0 +1,8 @@
+FROM ghcr.io/linuxserver/swag:latest
+
+RUN \
+  pip3 uninstall -y certbot-dns-ionos && \
+  git clone https://github.com/anhi/certbot-dns-ionos && \
+  cd certbot-dns-ionos && \
+  pip3 install . && \
+  cd ..
